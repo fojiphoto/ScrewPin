@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PopUpLose : GameMonobehavior
+public class PopUpLose : ScrePinGameMonobehavior
 {
     public float interAdsTime = 120f;
     private const string TimerKeyLose = "InterAdsTimer";

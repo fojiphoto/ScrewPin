@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SettingPopUp : GameMonobehavior
+public class SettingPopUp : ScrePinGameMonobehavior
 {
     [SerializeField] private GameObject _musicOnBtn;
     [SerializeField] private GameObject _musicOffBtn;

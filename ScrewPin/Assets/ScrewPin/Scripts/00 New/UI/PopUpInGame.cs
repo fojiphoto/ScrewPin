@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms;
 
-public class PopUpInGame : GameMonobehavior
+public class PopUpInGame : ScrePinGameMonobehavior
 {
     [SerializeField] private TMP_Text _lifeText;
     [SerializeField] private TMP_Text _coinText;
@@ -216,7 +216,7 @@ public class PopUpInGame : GameMonobehavior
         {
             if (Application.internetReachability == NetworkReachability.NotReachable)
             {
-                UIManager.Instance.ShowNoInternetPopUp();
+                ScrPinUIManager.Instance.ShowNoInternetPopUp();
                 return;
             }
             Debug.Log("Not enough gold to add a hole.");
@@ -249,7 +249,7 @@ public class PopUpInGame : GameMonobehavior
         {
             if (Application.internetReachability == NetworkReachability.NotReachable)
             {
-                UIManager.Instance.ShowNoInternetPopUp();
+                ScrPinUIManager.Instance.ShowNoInternetPopUp();
                 return;
             }
             Shuffle();
@@ -284,7 +284,7 @@ public class PopUpInGame : GameMonobehavior
         {
             if (Application.internetReachability == NetworkReachability.NotReachable)
             {
-                UIManager.Instance.ShowNoInternetPopUp();
+                ScrPinUIManager.Instance.ShowNoInternetPopUp();
                 return;
             }
             Ac.PlaySound(Ac.click);

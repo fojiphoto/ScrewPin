@@ -13,7 +13,7 @@ public enum ETypeBox
     BOX_4,
     BOX_5,
 }
-public class BoxController : GameMonobehavior
+public class ScrePinBoxController : ScrePinGameMonobehavior
 {
     [SerializeField] BoxItem _currentBox;
     [SerializeField] DataSOBox _dataSOBox;
@@ -127,7 +127,7 @@ public class BoxController : GameMonobehavior
             if (isLastBox) return;
             isLastBox = true;
             Debug.Log("Win");
-            Observe.OnWin?.Invoke();
+            ScrePinObserve.OnWin?.Invoke();
             return;
         }
 

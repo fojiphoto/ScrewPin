@@ -5,7 +5,7 @@ using DG.Tweening;
 using TMPro;
 using System;
 
-public class Loading : MonoBehaviour
+public class ScrePinLoading : MonoBehaviour
 {
     public Image LoadingFill_UI;
     public float TimeDuration;
@@ -27,7 +27,7 @@ public class Loading : MonoBehaviour
             OnLoadingUpdate?.Invoke();
         }).OnComplete(() =>
         {
-            SceneManager.LoadScene("GamePlay");
+            SceneManager.LoadScene("GamePlayScrew");
         });
     }
 

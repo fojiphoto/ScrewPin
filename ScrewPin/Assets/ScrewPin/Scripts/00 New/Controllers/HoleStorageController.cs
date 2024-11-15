@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-public class HoleStorageController : GameMonobehavior
+public class HoleStorageController : ScrePinGameMonobehavior
 {
     [SerializeField] HoleStorageItem _holeStorageItemPrefab;
     [SerializeField] List<HoleStorageItem> _holes;
@@ -70,7 +70,7 @@ public class HoleStorageController : GameMonobehavior
                 item.SetScrewItem(screw);
                 if (CheckLose())
                 {
-                    Observe.OnLose?.Invoke();
+                    ScrePinObserve.OnLose?.Invoke();
                     
                     Gm.cantClick = true;
                 }

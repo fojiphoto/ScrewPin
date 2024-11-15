@@ -5,15 +5,15 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
-public class GameManager : GameMonobehavior
+public class ScrePinGameManager : ScrePinGameMonobehavior
 {
-    public static GameManager Instance;
-    [SerializeField] BoxController _boxController;
+    public static ScrePinGameManager Instance;
+    [SerializeField] ScrePinBoxController _boxController;
     [SerializeField] HoleStorageController _holeStorageController;
-    [SerializeField] private LevelManager _levelManager;
+    [SerializeField] private ScrePinLevelManager _levelManager;
 
-    public LevelManager LevelManager => _levelManager;
-    public BoxController BoxController { get => _boxController; set => _boxController = value; }
+    public ScrePinLevelManager LevelManager => _levelManager;
+    public ScrePinBoxController BoxController { get => _boxController; set => _boxController = value; }
     public HoleStorageController HoleStorageController { get => _holeStorageController; set => _holeStorageController = value; }
     //public int levelPlaying;
     
@@ -34,8 +34,8 @@ public class GameManager : GameMonobehavior
 
     private void Start()
     {
-        Observe.OnWin += OnWin;
-        Observe.OnLose += OnLose;
+        ScrePinObserve.OnWin += OnWin;
+        ScrePinObserve.OnLose += OnLose;
     }
     public void ReloadCurrentScene()
     {
@@ -47,7 +47,7 @@ public class GameManager : GameMonobehavior
     {
         Debug.Log("onWin");
         IncrseaseLevel();
-        StartCoroutine(UIManager.Instance.ShowWinPopup());
+        StartCoroutine(ScrPinUIManager.Instance.ShowWinPopup());
 
     }
 
@@ -62,7 +62,7 @@ public class GameManager : GameMonobehavior
     public void OnLose()
     {
 
-        StartCoroutine(UIManager.Instance.ShowLosePopup());
+        StartCoroutine(ScrPinUIManager.Instance.ShowLosePopup());
 
     }
    
@@ -75,8 +75,8 @@ public class GameManager : GameMonobehavior
     }
     private void OnDestroy()
     {
-        Observe.OnWin -= OnWin;
-        Observe.OnLose -= OnLose;
+        ScrePinObserve.OnWin -= OnWin;
+        ScrePinObserve.OnLose -= OnLose;
     }
 
 }

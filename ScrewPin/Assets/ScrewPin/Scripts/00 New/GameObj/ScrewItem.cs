@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using static ScrewInfo;
 
-public class ScrewItem : GameMonobehavior
+public class ScrewItem : ScrePinGameMonobehavior
 {
     [SerializeField] private TypeColor _typeColor;
     [SerializeField] private TypeFace _typeFace;

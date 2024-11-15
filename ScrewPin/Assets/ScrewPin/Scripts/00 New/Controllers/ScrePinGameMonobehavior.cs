@@ -2,59 +2,59 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameMonobehavior : MonoBehaviour
+public class ScrePinGameMonobehavior : MonoBehaviour
 {
-    private GameManager _gameManager;
-    private UIManager _uiManager;
-    private DataManager _dataManager;
+    private ScrePinGameManager _gameManager;
+    private ScrPinUIManager _uiManager;
+    private ScrePinDataManager _dataManager;
     private GameConfig _gameConfig;
-    private SceneController _sceneController;
-    private GamePlayManager _gamePlayManager;
+    private ScrePinSceneController _sceneController;
+    private ScrePinGamePlayManager _gamePlayManager;
     private InputHandler _inputHandler;
-    private AudioController _audioController;
+    private ScrewPinAudioController _audioController;
 
-    public GameManager Gm
+    public ScrePinGameManager Gm
     {
         get 
         {
             if(_gameManager == null)
             {
-                _gameManager = GameManager.Instance;
+                _gameManager = ScrePinGameManager.Instance;
             }
             return _gameManager;
         }
     }
 
-    public AudioController Ac
+    public ScrewPinAudioController Ac
     {
         get
         {
             if (_audioController == null)
             {
-                _audioController = AudioController.Instance;
+                _audioController = ScrewPinAudioController.Instance;
             }
             return _audioController;
         }
     }
 
-    public GamePlayManager Gpm
+    public ScrePinGamePlayManager Gpm
     {
         get
         {
             if (_gamePlayManager == null)
             {
-                _gamePlayManager = GamePlayManager.Instance;
+                _gamePlayManager = ScrePinGamePlayManager.Instance;
             }
             return _gamePlayManager;
         }
     }
-    public UIManager Um
+    public ScrPinUIManager Um
     {
         get
         {
             if (_uiManager == null)
             {
-                _uiManager = UIManager.Instance;
+                _uiManager = ScrPinUIManager.Instance;
             }
             return _uiManager;
         }
@@ -62,13 +62,13 @@ public class GameMonobehavior : MonoBehaviour
 
     
 
-    public DataManager Dtm
+    public ScrePinDataManager Dtm
     {
         get
         {
             if (_dataManager == null)
             {
-                _dataManager = DataManager.Instance;
+                _dataManager = ScrePinDataManager.Instance;
             }
             return _dataManager;
         }
@@ -86,13 +86,13 @@ public class GameMonobehavior : MonoBehaviour
         }
     }
 
-    public SceneController Sc
+    public ScrePinSceneController Sc
     {
         get
         {
             if (_sceneController == null)
             {
-                _sceneController = SceneController.Instance;
+                _sceneController = ScrePinSceneController.Instance;
             }
             return _sceneController;
         }

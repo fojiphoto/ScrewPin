@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class PopUpWin : GameMonobehavior
+public class PopUpWin : ScrePinGameMonobehavior
 {
     [SerializeField] private Transform _pointPos;
     [SerializeField] private GameObject _winWarp;
@@ -96,7 +96,7 @@ public class PopUpWin : GameMonobehavior
     {
         if (Application.internetReachability == NetworkReachability.NotReachable)
         {
-            UIManager.Instance.ShowNoInternetPopUp();
+            ScrPinUIManager.Instance.ShowNoInternetPopUp();
             return;
         }
         GetReward();

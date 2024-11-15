@@ -3,9 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DataManager : MonoBehaviour
+public class ScrePinDataManager : MonoBehaviour
 {
-    public static DataManager Instance;
+    public static ScrePinDataManager Instance;
 
     private UserGameData _userGameData;
     private const string USER_DATA_FILE = "user_game_screw_data";

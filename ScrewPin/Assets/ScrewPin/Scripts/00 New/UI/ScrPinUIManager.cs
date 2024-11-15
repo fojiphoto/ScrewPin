@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIManager : GameMonobehavior
+public class ScrPinUIManager : ScrePinGameMonobehavior
 {
     //Ui
     [SerializeField] private GameObject _loseUi;
@@ -15,7 +15,7 @@ public class UIManager : GameMonobehavior
     [SerializeField] private GameObject _NoIneternetPopup;
 
 
-    public static UIManager Instance;
+    public static ScrPinUIManager Instance;
 
     private void Awake()
     {

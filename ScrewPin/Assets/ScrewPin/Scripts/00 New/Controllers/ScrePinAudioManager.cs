@@ -2,9 +2,9 @@ using UnityEngine.Audio;
 using UnityEngine;
 using System;
 
-public class AudioManager : GameMonobehavior
+public class ScrePinAudioManager : ScrePinGameMonobehavior
 {
-    public static AudioManager Instance;
+    public static ScrePinAudioManager Instance;
 
     [Header("----Audio Source")]
     [SerializeField] private AudioSource musicSource;
@@ -13,7 +13,7 @@ public class AudioManager : GameMonobehavior
 
 
     [Header("----Audio Clip")]
-    public Sound[] musicSounds, sfxSounds;
+    public ScrePinSound[] musicSounds, sfxSounds;
 
 
     private void Awake()
@@ -32,7 +32,7 @@ public class AudioManager : GameMonobehavior
     }
     public void PlayMusic(string name)
     {
-        Sound s = Array.Find(musicSounds, x => x.name == name);
+        ScrePinSound s = Array.Find(musicSounds, x => x.name == name);
         if(s == null)
         {
             Debug.Log("Sound not found");
@@ -46,7 +46,7 @@ public class AudioManager : GameMonobehavior
 
     public void PlaySFX(string name)
     {
-        Sound s = Array.Find(sfxSounds, x => x.name == name);
+        ScrePinSound s = Array.Find(sfxSounds, x => x.name == name);
         if (s == null)
         {
             Debug.Log("Sound not found");

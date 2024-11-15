@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class Main : GameMonobehavior
+public class Main : ScrePinGameMonobehavior
 {
     [SerializeField] private TMP_Text _levelText;
     [SerializeField] private TMP_Text _coinText;
@@ -46,7 +46,7 @@ public class Main : GameMonobehavior
     {
         Ac.PlaySound(Ac.click);
         gameObject.SetActive(false);
-        UIManager.Instance.ShowInGameUi();
+        ScrPinUIManager.Instance.ShowInGameUi();
         Gm.cantClick = false;
         
 

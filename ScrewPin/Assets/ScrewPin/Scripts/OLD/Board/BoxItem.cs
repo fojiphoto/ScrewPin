@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using DG.Tweening;
 
-public class BoxItem : GameMonobehavior
+public class BoxItem : ScrePinGameMonobehavior
 {
     [SerializeField] TypeColor _typeColor;
     [SerializeField] Transform _lid;

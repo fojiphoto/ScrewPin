@@ -6,10 +6,10 @@ using UnityEngine.UIElements;
 using UnityEngine.UI;
 using System.Linq;
 
-public class LevelController : GameMonobehavior
+public class ScrePinLevelController : ScrePinGameMonobehavior
 {
     [SerializeField] ScrewController _screwController;
-    [SerializeField] BoxController _boxController;
+    [SerializeField] ScrePinBoxController _boxController;
     [SerializeField] List<TypeColor> _typeColors;
     [SerializeField] private List<ScrewItem> screws = new List<ScrewItem>();
     [SerializeField] List<Transform> _positions = new List<Transform>();

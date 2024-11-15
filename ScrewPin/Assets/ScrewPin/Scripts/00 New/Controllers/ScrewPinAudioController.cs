@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioController : GameMonobehavior
+public class ScrewPinAudioController : ScrePinGameMonobehavior
 {
-    public static AudioController Instance;
+    public static ScrewPinAudioController Instance;
 
     [Header("Main Settings:")]
     [Range(0, 1)]

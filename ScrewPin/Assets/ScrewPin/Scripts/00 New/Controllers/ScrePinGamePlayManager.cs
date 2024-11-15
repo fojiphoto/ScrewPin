@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using DG.Tweening;
 
 
-public class GamePlayManager : GameMonobehavior
+public class ScrePinGamePlayManager : ScrePinGameMonobehavior
 {
     public Action OnAddHole;
     public Action OnShuffle;
@@ -17,7 +17,7 @@ public class GamePlayManager : GameMonobehavior
     public Skill[] skills;
 
 
-    public static GamePlayManager Instance;
+    public static ScrePinGamePlayManager Instance;
 
     private void Awake()
     {

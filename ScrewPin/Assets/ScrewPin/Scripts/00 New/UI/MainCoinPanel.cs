@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class MainCoinPanel : GameMonobehavior
+public class MainCoinPanel : ScrePinGameMonobehavior
 {
    
 }

@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/ScrewPin/Scenes/Loading.unity
+    path: Assets/ScrewPin/Scenes/LoadingScre.unity
     guid: c8b8806ee7e57d146805b86e16e433d9
   - enabled: 1
-    path: Assets/ScrewPin/Scenes/GamePlay.unity
-    guid: 8dbf66428bffa9c4192585289d94e553
+    path: Assets/ScrewPin/Scenes/GamePlayScrew.unity
+    guid: 8dbf66408bffa9c4192585289d94e553
   m_configObjects: {}

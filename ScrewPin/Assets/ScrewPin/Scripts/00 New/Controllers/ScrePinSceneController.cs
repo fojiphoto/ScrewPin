@@ -4,9 +4,9 @@ using UnityEngine;
 using DG.Tweening;
 using UnityEngine.SceneManagement;
 
-public class SceneController : MonoBehaviour
+public class ScrePinSceneController : MonoBehaviour
 {
-    public static SceneController Instance;
+    public static ScrePinSceneController Instance;
     public CanvasGroup transition;
 
     private void Awake()
@@ -29,7 +29,7 @@ public class SceneController : MonoBehaviour
         transition.DOFade(0, 0f);
         transition.DOFade(1, 0.5f).OnComplete(() =>
         {
-            SceneManager.LoadScene("GamePlay");
+            SceneManager.LoadScene("GamePlayScrew");
         });
     }
 

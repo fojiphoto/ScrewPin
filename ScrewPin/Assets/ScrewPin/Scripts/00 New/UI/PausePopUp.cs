@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
 
-public class PausePopUp : GameMonobehavior
+public class PausePopUp : ScrePinGameMonobehavior
 {
     [SerializeField] private GameObject _musicOnBtn;
     [SerializeField] private GameObject _musicOffBtn;

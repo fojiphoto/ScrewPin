@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class PurchasePopUp : GameMonobehavior
+public class PurchasePopUp : ScrePinGameMonobehavior
 {
     [SerializeField] private int _cost;
     [SerializeField] private TMP_Text _coinText;
