@@ -220,17 +220,20 @@ public class PopUpInGame : GameMonobehavior
                 return;
             }
             Debug.Log("Not enough gold to add a hole.");
-            AdManager.instance.ShowReward(() =>
-            {
-                Ac.PlaySound(Ac.click);
-                AddHole();
-                //ResetTimer();
+            Ac.PlaySound(Ac.click);
+            AddHole();
+            //Nadeem Ads ScrewPin
+            //AdManager.instance.ShowReward(() =>
+            //{
+            //    Ac.PlaySound(Ac.click);
+            //    AddHole();
+            //    //ResetTimer();
 
-            }, () =>
-            {
-                //ResetTimer();
+            //}, () =>
+            //{
+            //    //ResetTimer();
 
-            }, "YourPlacementID");
+            //}, "YourPlacementID");
 
         }
         else
@@ -249,18 +252,20 @@ public class PopUpInGame : GameMonobehavior
                 UIManager.Instance.ShowNoInternetPopUp();
                 return;
             }
-            AdManager.instance.ShowReward(() =>
-            {
-                Ac.PlaySound(Ac.click);
-                //ResetTimer();
+            Shuffle();
+            //Nadeem Ads ScrewPin
+            //AdManager.instance.ShowReward(() =>
+            //{
+            //    Ac.PlaySound(Ac.click);
+            //    //ResetTimer();
 
-                Shuffle();
-                //Time.timeScale = 1f;
-            }, () =>
-            {
-                //ResetTimer();
+            //    Shuffle();
+            //    //Time.timeScale = 1f;
+            //}, () =>
+            //{
+            //    //ResetTimer();
 
-            }, "YourPlacementID");
+            //}, "YourPlacementID");
         }
         else
         {
@@ -282,19 +287,24 @@ public class PopUpInGame : GameMonobehavior
                 UIManager.Instance.ShowNoInternetPopUp();
                 return;
             }
-            AdManager.instance.ShowReward(() =>
-            {
-                Ac.PlaySound(Ac.click);
-                //ResetTimer();
+            Ac.PlaySound(Ac.click);
+            //ResetTimer();
 
-                AutoMatch();
+            AutoMatch();
+            //Nadeem Ads ScrewPin
+            //AdManager.instance.ShowReward(() =>
+            //{
+            //    Ac.PlaySound(Ac.click);
+            //    //ResetTimer();
 
-            }, () =>
-            {
-                //ResetTimer();
+            //    AutoMatch();
+
+            //}, () =>
+            //{
+            //    //ResetTimer();
 
 
-            }, "YourPlacementID");
+            //}, "YourPlacementID");
         }
         else
         {

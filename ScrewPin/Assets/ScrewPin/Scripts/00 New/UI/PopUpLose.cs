@@ -46,19 +46,22 @@ public class PopUpLose : GameMonobehavior
 
     public void AdSkipReward()
     {
-        if (Application.internetReachability == NetworkReachability.NotReachable)
-        {
-            UIManager.Instance.ShowNoInternetPopUp();
-            return;
-        }
-        AdManager.instance.ShowReward(() =>
-        {
-            SkipLevel();
 
-        }, () =>
-        {
+        SkipLevel();
+        //Nadeem Ads ScrewPin
+        //if (Application.internetReachability == NetworkReachability.NotReachable)
+        //{
+        //    UIManager.Instance.ShowNoInternetPopUp();
+        //    return;
+        //}
+        //AdManager.instance.ShowReward(() =>
+        //{
+        //    SkipLevel();
 
-        }, "YourPlacementID");
+        //}, () =>
+        //{
+
+        //}, "YourPlacementID");
     }
 
     public void TryAgain()
@@ -75,22 +78,24 @@ public class PopUpLose : GameMonobehavior
 
     public void TryAgainAdsInter()
     {
-        if (interAdsTime <= 0)
-        {
-            AdManager.instance.ShowInter(() =>
-            {
-                ResetTimer();
-                TryAgain();
-            },
-            () => {
-                ResetTimer();
-                TryAgain();
-            }, "Null");
-        }
-        else
-        {
-            TryAgain();
-        }
+        TryAgain();
+        //Nadeem Ads ScrewPin
+        //if (interAdsTime <= 0)
+        //{
+        //    AdManager.instance.ShowInter(() =>
+        //    {
+        //        ResetTimer();
+        //        TryAgain();
+        //    },
+        //    () => {
+        //        ResetTimer();
+        //        TryAgain();
+        //    }, "Null");
+        //}
+        //else
+        //{
+        //    TryAgain();
+        //}
     }
 
     private void ResetTimer()

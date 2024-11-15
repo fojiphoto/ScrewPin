@@ -65,24 +65,26 @@ public class PopUpWin : GameMonobehavior
     public void NoThankAdsInter()
     {
 
-        if (interAdsTime <= 0)
-        {
-            AdManager.instance.ShowInter(() =>
-            {
-                ResetTimer();
-                NoThank();
-            },
-            () =>
-            {
-                ResetTimer();
-                NoThank();
-            }, "Null");
-        }
-        else
-        {
-            NoThank();
-            
-        }
+        NoThank();
+        //Nadeem Ads ScrewPin
+        //if (interAdsTime <= 0)
+        //{
+        //    AdManager.instance.ShowInter(() =>
+        //    {
+        //        ResetTimer();
+        //        NoThank();
+        //    },
+        //    () =>
+        //    {
+        //        ResetTimer();
+        //        NoThank();
+        //    }, "Null");
+        //}
+        //else
+        //{
+        //    NoThank();
+
+        //}
     }
     private void ResetTimer()
     {
@@ -97,14 +99,16 @@ public class PopUpWin : GameMonobehavior
             UIManager.Instance.ShowNoInternetPopUp();
             return;
         }
-        AdManager.instance.ShowReward(() =>
-        {
-            GetReward();
+        GetReward();
+        //Nadeem Ads ScrewPin
+        //AdManager.instance.ShowReward(() =>
+        //{
+        //    GetReward();
 
-        }, () =>
-        {
+        //}, () =>
+        //{
 
-        }, "YourPlacementID");
+        //}, "YourPlacementID");
     }
 
     public void InscreasCoin(int amount)
