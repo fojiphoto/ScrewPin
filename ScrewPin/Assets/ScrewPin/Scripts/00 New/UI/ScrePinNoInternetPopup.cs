@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NoInternetPopup : ScrePinGameMonobehavior
+public class ScrePinNoInternetPopup : ScrePinGameMonobehavior
 {
     private void OnEnable()
     {

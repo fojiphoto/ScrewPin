@@ -2,20 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 [ES3Serializable]
-public class UserGameData
+public class ScrePinUserGameData
 {
     [ES3Serializable]
-    private Dictionary<ResourceType, int> gameResources;
-    public Dictionary<ResourceType, int> GameResources { get => gameResources; }
+    private Dictionary<ScrePinResourceType, int> gameResources;
+    public Dictionary<ScrePinResourceType, int> GameResources { get => gameResources; }
 
     [ES3Serializable]
-    private DataLevel dataLevel;
+    private ScrePinDataLevel dataLevel;
     private bool isFirstInGame = false;
     private string version_game;
 
-    public UserGameData()
+    public ScrePinUserGameData()
     {
-        gameResources = new Dictionary<ResourceType, int>();
+        gameResources = new Dictionary<ScrePinResourceType, int>();
         DefaultFirstInGame();
     }
 
@@ -25,12 +25,12 @@ public class UserGameData
         {
             if (dataLevel == null)
             {
-                dataLevel = new DataLevel();
+                dataLevel = new ScrePinDataLevel();
                 dataLevel.CurrentLevel = 1;
-                gameResources.Add(ResourceType.RemoveAds, 0);
-                gameResources.Add(ResourceType.Gold, 100);
-                gameResources.Add(ResourceType.Life, 5);
-                gameResources.Add(ResourceType.Level, 1);
+                gameResources.Add(ScrePinResourceType.RemoveAds, 0);
+                gameResources.Add(ScrePinResourceType.Gold, 100);
+                gameResources.Add(ScrePinResourceType.Life, 5);
+                gameResources.Add(ScrePinResourceType.Level, 1);
 
 
                 isFirstInGame = true;
@@ -52,7 +52,7 @@ public class UserGameData
 
 }
 
-public class DataLevel
+public class ScrePinDataLevel
 {
 
     public int CurrentLevel;

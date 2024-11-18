@@ -9,7 +9,7 @@ using UnityEngine;
 
 [CreateAssetMenu(menuName = "Data/Data SO Level", fileName = "Data Level")]
 
-public class LevelConfig : ScriptableObject
+public class ScrePinLevelConfig : ScriptableObject
 {
     public List<GameObject> levels = new();
     

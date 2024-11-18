@@ -7,7 +7,7 @@ public class ScrePinGameMonobehavior : MonoBehaviour
     private ScrePinGameManager _gameManager;
     private ScrPinUIManager _uiManager;
     private ScrePinDataManager _dataManager;
-    private GameConfig _gameConfig;
+    private ScrePinGameConfig _gameConfig;
     private ScrePinSceneController _sceneController;
     private ScrePinGamePlayManager _gamePlayManager;
     private InputHandler _inputHandler;
@@ -74,13 +74,13 @@ public class ScrePinGameMonobehavior : MonoBehaviour
         }
     }
 
-    public GameConfig Gc
+    public ScrePinGameConfig Gc
     {
         get
         {
             if (_gameConfig == null)
             {
-                _gameConfig = GameConfig.Instance;
+                _gameConfig = ScrePinGameConfig.Instance;
             }
             return _gameConfig;
         }

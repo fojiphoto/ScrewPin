@@ -35,35 +35,35 @@ public class PopUpInGame : ScrePinGameMonobehavior
 
     private void OnEnable()
     {
-        Dtm.RegisterResourceTypeChangedListener(ResourceType.Life, UpdateTextLife);
-        Dtm.RegisterResourceTypeChangedListener(ResourceType.Gold, UpdateTextCoin);
-        Dtm.RegisterResourceTypeChangedListener(ResourceType.Level, UpdateLevelText);
+        Dtm.RegisterResourceTypeChangedListener(ScrePinResourceType.Life, UpdateTextLife);
+        Dtm.RegisterResourceTypeChangedListener(ScrePinResourceType.Gold, UpdateTextCoin);
+        Dtm.RegisterResourceTypeChangedListener(ScrePinResourceType.Level, UpdateLevelText);
 
     }
 
     private void OnDisable()
     {
-        Dtm.UnregisterResourceTypeChangedListener(ResourceType.Life, UpdateTextLife);
-        Dtm.UnregisterResourceTypeChangedListener(ResourceType.Gold, UpdateTextCoin);
-        Dtm.RegisterResourceTypeChangedListener(ResourceType.Level, UpdateLevelText);
+        Dtm.UnregisterResourceTypeChangedListener(ScrePinResourceType.Life, UpdateTextLife);
+        Dtm.UnregisterResourceTypeChangedListener(ScrePinResourceType.Gold, UpdateTextCoin);
+        Dtm.RegisterResourceTypeChangedListener(ScrePinResourceType.Level, UpdateLevelText);
 
     }
-    public void UpdateTextCoin(ResourceType resourceType)
+    public void UpdateTextCoin(ScrePinResourceType resourceType)
     {
         _coinText.text = Dtm.Gold.ToString();
         Debug.Log(Dtm.Gold + " " + resourceType);
     }
 
-    public void UpdateTextLife(ResourceType resourceType)
+    public void UpdateTextLife(ScrePinResourceType resourceType)
     {
         _lifeText.text = Dtm.Life.ToString();
 
     }
     private void Start()
     {
-        UpdateTextLife(ResourceType.Life);
-        UpdateTextCoin(ResourceType.Gold);
-        UpdateLevelText(ResourceType.Level);
+        UpdateTextLife(ScrePinResourceType.Life);
+        UpdateTextCoin(ScrePinResourceType.Gold);
+        UpdateLevelText(ScrePinResourceType.Level);
         UpdateCostText();
         //interAdsTime = PlayerPrefs.GetFloat(TimerKeyReload, 120f);
         //StartCoroutine(UpdateTimer());
@@ -162,7 +162,7 @@ public class PopUpInGame : ScrePinGameMonobehavior
 
     }
 
-    public void UpdateLevelText(ResourceType resourceType)
+    public void UpdateLevelText(ScrePinResourceType resourceType)
     {
         _levelText.text = "LEVEL " + Dtm.Level.ToString();
     }

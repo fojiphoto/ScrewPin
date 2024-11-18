@@ -1,39 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using DG.Tweening;
 
-public class PausePopUp : ScrePinGameMonobehavior
+public class ScrePinSettingPopUp : ScrePinGameMonobehavior
 {
     [SerializeField] private GameObject _musicOnBtn;
     [SerializeField] private GameObject _musicOffBtn;
 
     [SerializeField] private GameObject _sfxOnBtn;
     [SerializeField] private GameObject _sfxOffBtn;
-
-    [SerializeField] private string gameUrl1 = "https://play.google.com/store/apps/details?id=com.cmgame.lifting.superhero.gym.clicker";
-    [SerializeField] private string gameUrl2 = "https://play.google.com/store/apps/details?id=com.cmgame.gym.clicker.invincible.hero";
+    [SerializeField] private string gameUrl1 = "https://play.google.com/store/apps/details?id=com.cmgame.gym.clicker.invincible.hero";
+    [SerializeField] private string gameUrl2 = "https://play.google.com/store/apps/details?id=com.cmgame.lifting.superhero.gym.clicker";
     
-
     private void Awake()
     {
         LoadButtonStates();
     }
-    public void ResumeGame()
+    public void Confirm()
     {
         Ac.PlaySound(Ac.closePopup);
         Gm.cantClick = false;
-        gameObject.SetActive(false);
         Time.timeScale = 1f;
+        gameObject.SetActive(false);
+
     }
 
-    public void BackMenu()
+    public void Exit()
     {
-        Ac.PlaySound(Ac.closePopup);
-        gameObject.SetActive(false);
-        Time.timeScale = 1f;
-        Sc.TransitionLoad();
+        Application.Quit(); 
     }
 
     public void ToggleMusicOn()
@@ -67,6 +61,7 @@ public class PausePopUp : ScrePinGameMonobehavior
         Ac.ToggleSFX();
         SaveButtonStates();
     }
+
     public void MoreGame1()
     {
         Application.OpenURL(gameUrl1);
@@ -75,6 +70,7 @@ public class PausePopUp : ScrePinGameMonobehavior
     {
         Application.OpenURL(gameUrl2);
     }
+
     private void SaveButtonStates()
     {
         PlayerPrefs.SetInt("MusicOnBtnActive", _musicOnBtn.activeSelf ? 1 : 0);

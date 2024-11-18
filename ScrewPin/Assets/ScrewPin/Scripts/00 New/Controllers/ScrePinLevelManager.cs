@@ -7,12 +7,12 @@ public class ScrePinLevelManager : ScrePinGameMonobehavior
 {
     private GameObject _objLevel;
 
-    [NotNull] private LevelConfig _levelConfig;
+    [NotNull] private ScrePinLevelConfig _levelConfig;
 
     private void Start()
     {
         LoadLevel();
-        _levelConfig = GameConfig.Instance.levelConfig;
+        _levelConfig = ScrePinGameConfig.Instance.levelConfig;
     }
     public void LoadLevel()
     {

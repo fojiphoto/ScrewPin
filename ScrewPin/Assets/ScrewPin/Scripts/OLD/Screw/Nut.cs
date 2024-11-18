@@ -18,7 +18,7 @@ public class Nut : MonoBehaviour
     {
         screwInfo = GetComponent<ScrewInfo>();
         board = GetComponent<Board>();
-        hold = FindAnyObjectByType<HoldScrew>();
+        hold = FindObjectOfType<HoldScrew>();
 
         boardManager = FindObjectOfType<BoardManager>();
         mainCamera = Camera.main;

@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameConfig : MonoBehaviour
+public class ScrePinGameConfig : MonoBehaviour
 {
-    public static GameConfig Instance;
-    public LevelConfig levelConfig;
+    public static ScrePinGameConfig Instance;
+    public ScrePinLevelConfig levelConfig;
     private void Awake()
     {
         if (Instance == null)

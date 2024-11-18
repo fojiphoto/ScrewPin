@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class Main : ScrePinGameMonobehavior
+public class ScrePinMain : ScrePinGameMonobehavior
 {
     [SerializeField] private TMP_Text _levelText;
     [SerializeField] private TMP_Text _coinText;
@@ -13,29 +13,29 @@ public class Main : ScrePinGameMonobehavior
 
     private void OnEnable()
     {
-        Dtm.RegisterResourceTypeChangedListener(ResourceType.Gold, UpdateTextCoin);
-        Dtm.RegisterResourceTypeChangedListener(ResourceType.Level, UpdateLevelText);
+        Dtm.RegisterResourceTypeChangedListener(ScrePinResourceType.Gold, UpdateTextCoin);
+        Dtm.RegisterResourceTypeChangedListener(ScrePinResourceType.Level, UpdateLevelText);
 
 
     }
 
     private void OnDisable()
     {
-        Dtm.UnregisterResourceTypeChangedListener(ResourceType.Gold, UpdateTextCoin);
-        Dtm.RegisterResourceTypeChangedListener(ResourceType.Level, UpdateLevelText);
+        Dtm.UnregisterResourceTypeChangedListener(ScrePinResourceType.Gold, UpdateTextCoin);
+        Dtm.RegisterResourceTypeChangedListener(ScrePinResourceType.Level, UpdateLevelText);
 
 
     }
 
     private void Start()
     {
-        UpdateTextCoin(ResourceType.Gold);
-        UpdateLevelText(ResourceType.Level); // Initial update
+        UpdateTextCoin(ScrePinResourceType.Gold);
+        UpdateLevelText(ScrePinResourceType.Level); // Initial update
     }
 
     
 
-    public void UpdateTextCoin(ResourceType resourceType)
+    public void UpdateTextCoin(ScrePinResourceType resourceType)
     {
         _coinText.text = Dtm.Gold.ToString();
         Debug.Log(Dtm.Gold + " " + resourceType);
@@ -52,7 +52,7 @@ public class Main : ScrePinGameMonobehavior
 
     }
 
-    public void UpdateLevelText(ResourceType resourceType)
+    public void UpdateLevelText(ScrePinResourceType resourceType)
     {
         _levelText.text = "LEVEL " + Dtm.Level.ToString();
     }

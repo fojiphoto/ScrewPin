@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LoadingManager : MonoBehaviour
+public class ScrePinLoadingManager : MonoBehaviour
 {
     private void Start()
     {

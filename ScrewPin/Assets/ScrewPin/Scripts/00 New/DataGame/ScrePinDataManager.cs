@@ -7,13 +7,13 @@ public class ScrePinDataManager : MonoBehaviour
 {
     public static ScrePinDataManager Instance;
 
-    private UserGameData _userGameData;
+    private ScrePinUserGameData _userGameData;
     private const string USER_DATA_FILE = "user_game_screw_data";
     private ES3Settings USER_GAME_DATA_SETTINGS;
     private const string DATA_KEY = "data_game_screw";
-    private Dictionary<ResourceType, List<Action<ResourceType>>> onResourceTypeChanged = new();
-    public UserGameData UserGameData { get => _userGameData; set => _userGameData = value; }
-    public event Action<ResourceType, bool> OnResourceTypeChangedSuspend;
+    private Dictionary<ScrePinResourceType, List<Action<ScrePinResourceType>>> onResourceTypeChanged = new();
+    public ScrePinUserGameData UserGameData { get => _userGameData; set => _userGameData = value; }
+    public event Action<ScrePinResourceType, bool> OnResourceTypeChangedSuspend;
 
 
     protected void Awake()
@@ -41,7 +41,7 @@ public class ScrePinDataManager : MonoBehaviour
         if (ES3.KeyExists(DATA_KEY, USER_DATA_FILE, USER_GAME_DATA_SETTINGS))
         {
             Debug.Log("Load Data");
-            _userGameData = ES3.Load<UserGameData>(DATA_KEY, USER_DATA_FILE, USER_GAME_DATA_SETTINGS);
+            _userGameData = ES3.Load<ScrePinUserGameData>(DATA_KEY, USER_DATA_FILE, USER_GAME_DATA_SETTINGS);
         }
         else
         {
@@ -80,13 +80,13 @@ public class ScrePinDataManager : MonoBehaviour
     {
         if (_userGameData != null)
         {
-            ES3.Save<UserGameData>(DATA_KEY, _userGameData, USER_DATA_FILE, USER_GAME_DATA_SETTINGS);
+            ES3.Save<ScrePinUserGameData>(DATA_KEY, _userGameData, USER_DATA_FILE, USER_GAME_DATA_SETTINGS);
         }
     }
 
-    public void RegisterResourceTypeChangedListener(ResourceType type, Action<ResourceType> listener)
+    public void RegisterResourceTypeChangedListener(ScrePinResourceType type, Action<ScrePinResourceType> listener)
     {
-        List<Action<ResourceType>> actions = GetResourceTypeChangedListeners(type);
+        List<Action<ScrePinResourceType>> actions = GetResourceTypeChangedListeners(type);
 
         if (!actions.Contains(listener))
         {
@@ -94,9 +94,9 @@ public class ScrePinDataManager : MonoBehaviour
         }
     }
 
-    public void UnregisterResourceTypeChangedListener(ResourceType type, Action<ResourceType> listener)
+    public void UnregisterResourceTypeChangedListener(ScrePinResourceType type, Action<ScrePinResourceType> listener)
     {
-        List<Action<ResourceType>> actions = GetResourceTypeChangedListeners(type);
+        List<Action<ScrePinResourceType>> actions = GetResourceTypeChangedListeners(type);
 
         if (actions.Contains(listener))
         {
@@ -104,9 +104,9 @@ public class ScrePinDataManager : MonoBehaviour
         }
     }
 
-    private List<Action<ResourceType>> GetResourceTypeChangedListeners(ResourceType type)
+    private List<Action<ScrePinResourceType>> GetResourceTypeChangedListeners(ScrePinResourceType type)
     {
-        List<Action<ResourceType>> actions = null;
+        List<Action<ScrePinResourceType>> actions = null;
         if (onResourceTypeChanged.ContainsKey(type))
         {
             actions = onResourceTypeChanged[type];
@@ -120,10 +120,10 @@ public class ScrePinDataManager : MonoBehaviour
         return actions;
     }
 
-    private void InvokeResourceTypeChangedListener(ResourceType type)
+    private void InvokeResourceTypeChangedListener(ScrePinResourceType type)
     {
-        List<Action<ResourceType>> actions = GetResourceTypeChangedListeners(type);
-        foreach (Action<ResourceType> action in actions)
+        List<Action<ScrePinResourceType>> actions = GetResourceTypeChangedListeners(type);
+        foreach (Action<ScrePinResourceType> action in actions)
         {
             action?.Invoke(type);
         }
@@ -131,36 +131,36 @@ public class ScrePinDataManager : MonoBehaviour
 
     public int Gold
     {
-        get { return GetResourceTypeCount(ResourceType.Gold); }
+        get { return GetResourceTypeCount(ScrePinResourceType.Gold); }
         set
         {
-            SetResourceTypeCount(ResourceType.Gold, value);
+            SetResourceTypeCount(ScrePinResourceType.Gold, value);
         }
     }
 
     public int Life
     {
-        get { return GetResourceTypeCount(ResourceType.Life); }
+        get { return GetResourceTypeCount(ScrePinResourceType.Life); }
         set
         {
-            SetResourceTypeCount(ResourceType.Life, value);
+            SetResourceTypeCount(ScrePinResourceType.Life, value);
         }
     }
 
     public int Level
     {
-        get { return GetResourceTypeCount(ResourceType.Level); }
+        get { return GetResourceTypeCount(ScrePinResourceType.Level); }
         set
         {
-            SetResourceTypeCount(ResourceType.Level, value);
+            SetResourceTypeCount(ScrePinResourceType.Level, value);
         }
     }
     public bool RemoveAds
     {
-        get { return GetResourceTypeCount(ResourceType.RemoveAds) >= 1; }
+        get { return GetResourceTypeCount(ScrePinResourceType.RemoveAds) >= 1; }
         set
         {
-            SetResourceTypeCount(ResourceType.RemoveAds, value ? 1 : 0);
+            SetResourceTypeCount(ScrePinResourceType.RemoveAds, value ? 1 : 0);
         }
     }
 
@@ -174,28 +174,28 @@ public class ScrePinDataManager : MonoBehaviour
         }
     }*/
 
-    public int GetResourceTypeCount(ResourceType resourceType)
+    public int GetResourceTypeCount(ScrePinResourceType resourceType)
     {
         return _userGameData.GameResources[resourceType];
     }
 
-    public void SetResourceTypeCount(ResourceType resourceType, int value)
+    public void SetResourceTypeCount(ScrePinResourceType resourceType, int value)
     {
         _userGameData.GameResources[resourceType] = value;
         InvokeResourceTypeChangedListener(resourceType);
     }
 
-    public void SupspendResourceTypeChanged(ResourceType resourceType)
+    public void SupspendResourceTypeChanged(ScrePinResourceType resourceType)
     {
         OnResourceTypeChangedSuspend?.Invoke(resourceType, true);
     }
 
-    public void ResumeResourceTypeChanged(ResourceType resourceType)
+    public void ResumeResourceTypeChanged(ScrePinResourceType resourceType)
     {
         OnResourceTypeChangedSuspend?.Invoke(resourceType, false);
     }
 
-    public void TriggerResourceTypeChanged(ResourceType resourceType)
+    public void TriggerResourceTypeChanged(ScrePinResourceType resourceType)
     {
         InvokeResourceTypeChangedListener(resourceType);
     }

@@ -14,7 +14,7 @@ public enum TypeColor
     YEALLOW,
 }
 
-public enum ResourceType
+public enum ScrePinResourceType
 {
     Gold = 0,
     Life = 1,
