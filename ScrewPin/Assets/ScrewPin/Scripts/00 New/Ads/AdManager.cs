@@ -8,10 +8,10 @@ using DG.Tweening;
 
 public class AdManager : MonoBehaviour
 {
-    public static AdManager instance { get; set; }
+    public static AdManager instance;
     
-    public float DefaultTimeInter;
-    bool canShowOpenAd = true;
+    
+    
     private void Awake()
     {
         if (instance == null)
@@ -28,37 +28,11 @@ public class AdManager : MonoBehaviour
         }
         
     }
-    /*public Image loadingFill;*/
-    private void Start()
-    {
-
-       
-
-
-        Invoke(nameof(StartLoading), 1f);
-
-    }
-    private void StartLoading()
-    {
-        
-    }
-    public static void PauseGame()
-    {
-        AudioListener.volume = 0;
-        Time.timeScale = 0f;
-    }
-    public static void Resume()
-    {
-        Time.timeScale = 1f;
-        AudioListener.volume = 1;
-    }
-  
+    
+   
 
    
-    public void ShowOpen()
-    {
-       
-    }
+    
     public void ShowInter()
     {
 

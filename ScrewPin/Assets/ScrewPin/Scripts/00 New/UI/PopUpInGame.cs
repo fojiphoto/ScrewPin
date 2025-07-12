@@ -169,6 +169,7 @@ public class PopUpInGame : GameMonobehavior
 
     public void Replay()
     {
+        AdManager.instance.ShowInter();
         SceneManager.LoadScene("GamePlay");
         Sc.TransitionLoad();
         DescreaseLife(1);

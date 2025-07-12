@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class UIManager : GameMonobehavior
 {
     //Ui
@@ -26,6 +27,7 @@ public class UIManager : GameMonobehavior
     }
     public IEnumerator ShowLosePopup()
     {
+        AdManager.instance.ShowInter();
         yield return new WaitForSeconds(1f);
         Ac.PlaySound(Ac.lose);
         Ac.StopPlayMusic();
@@ -34,7 +36,7 @@ public class UIManager : GameMonobehavior
 
     public IEnumerator ShowWinPopup()
     {
-
+        AdManager.instance.ShowInter();
         yield return new WaitForSeconds(1f);
         Ac.PlaySound(Ac.win);
         Ac.StopPlayMusic();
@@ -61,6 +63,7 @@ public class UIManager : GameMonobehavior
 
     public void ShowPausePopup()
     {
+        AdManager.instance.ShowInter();
         Ac.PlaySound(Ac.openPopup);
         Gm.cantClick = true;
 
