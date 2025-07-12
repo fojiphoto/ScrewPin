@@ -8,7 +8,7 @@ public class AdsController : MonoBehaviour
 
     private void Start()
     {
-        AdManager.instance.ShowBanner();
+       // AdManager.instance.ShowBanner();
         //StartCoroutine(ShowInterAfkEvery30Seconds());
     }
 

@@ -65,24 +65,14 @@ public class PopUpWin : GameMonobehavior
     public void NoThankAdsInter()
     {
 
-        if (interAdsTime <= 0)
-        {
-            AdManager.instance.ShowInter(() =>
-            {
-                ResetTimer();
-                NoThank();
-            },
-            () =>
-            {
-                ResetTimer();
-                NoThank();
-            }, "Null");
-        }
-        else
-        {
+        
+            AdManager.instance.ShowInter();
+        
+       
+        
             NoThank();
             
-        }
+        
     }
     private void ResetTimer()
     {
@@ -101,10 +91,7 @@ public class PopUpWin : GameMonobehavior
         {
             GetReward();
 
-        }, () =>
-        {
-
-        }, "YourPlacementID");
+        });
     }
 
     public void InscreasCoin(int amount)

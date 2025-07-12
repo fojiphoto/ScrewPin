@@ -224,13 +224,9 @@ public class PopUpInGame : GameMonobehavior
             {
                 Ac.PlaySound(Ac.click);
                 AddHole();
-                //ResetTimer();
+                
 
-            }, () =>
-            {
-                //ResetTimer();
-
-            }, "YourPlacementID");
+            });
 
         }
         else
@@ -256,11 +252,7 @@ public class PopUpInGame : GameMonobehavior
 
                 Shuffle();
                 //Time.timeScale = 1f;
-            }, () =>
-            {
-                //ResetTimer();
-
-            }, "YourPlacementID");
+            });
         }
         else
         {
@@ -289,12 +281,7 @@ public class PopUpInGame : GameMonobehavior
 
                 AutoMatch();
 
-            }, () =>
-            {
-                //ResetTimer();
-
-
-            }, "YourPlacementID");
+            });
         }
         else
         {

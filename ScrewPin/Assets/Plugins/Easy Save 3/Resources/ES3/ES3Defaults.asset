@@ -33,6 +33,7 @@ MonoBehaviour:
     - Assembly-CSharp
     - Assembly-CSharp-firstpass
     - Cinemachine
+    - GamePix
     - IngameDebugConsole.Runtime
     - MK.Toon
     - MK.Toon.URP

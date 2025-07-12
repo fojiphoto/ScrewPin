@@ -55,10 +55,9 @@ public class PopUpLose : GameMonobehavior
         {
             SkipLevel();
 
-        }, () =>
-        {
+        
 
-        }, "YourPlacementID");
+        });
     }
 
     public void TryAgain()
@@ -75,22 +74,12 @@ public class PopUpLose : GameMonobehavior
 
     public void TryAgainAdsInter()
     {
-        if (interAdsTime <= 0)
-        {
-            AdManager.instance.ShowInter(() =>
-            {
-                ResetTimer();
-                TryAgain();
-            },
-            () => {
-                ResetTimer();
-                TryAgain();
-            }, "Null");
-        }
-        else
-        {
+        
+            AdManager.instance.ShowInter();
+        
+        
             TryAgain();
-        }
+        
     }
 
     private void ResetTimer()
