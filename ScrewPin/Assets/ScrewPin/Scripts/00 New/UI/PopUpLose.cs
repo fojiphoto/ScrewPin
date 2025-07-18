@@ -51,7 +51,7 @@ public class PopUpLose : GameMonobehavior
             UIManager.Instance.ShowNoInternetPopUp();
             return;
         }
-        AdManager.instance.ShowReward(() =>
+        AdsManager.instance.ShowReward(() =>
         {
             SkipLevel();
 
@@ -77,7 +77,7 @@ public class PopUpLose : GameMonobehavior
     {
         if (interAdsTime <= 0)
         {
-            AdManager.instance.ShowInter(() =>
+            AdsManager.instance.ShowInter(() =>
             {
                 ResetTimer();
                 TryAgain();

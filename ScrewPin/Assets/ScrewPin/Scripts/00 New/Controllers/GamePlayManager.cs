@@ -27,7 +27,11 @@ public class GamePlayManager : GameMonobehavior
             DestroyImmediate(gameObject);
         
     }
-    
+    private void Start()
+    {
+        AdsManager.instance.ShowBanner();
+    }
+
     private void Update()
     {
         foreach (Skill skill in skills)

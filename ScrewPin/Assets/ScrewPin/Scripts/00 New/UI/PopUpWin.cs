@@ -67,7 +67,7 @@ public class PopUpWin : GameMonobehavior
 
         if (interAdsTime <= 0)
         {
-            AdManager.instance.ShowInter(() =>
+            AdsManager.instance.ShowInter(() =>
             {
                 ResetTimer();
                 NoThank();
@@ -97,7 +97,7 @@ public class PopUpWin : GameMonobehavior
             UIManager.Instance.ShowNoInternetPopUp();
             return;
         }
-        AdManager.instance.ShowReward(() =>
+        AdsManager.instance.ShowReward(() =>
         {
             GetReward();
 

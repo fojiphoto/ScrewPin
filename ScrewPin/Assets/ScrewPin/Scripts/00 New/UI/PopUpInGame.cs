@@ -220,7 +220,7 @@ public class PopUpInGame : GameMonobehavior
                 return;
             }
             Debug.Log("Not enough gold to add a hole.");
-            AdManager.instance.ShowReward(() =>
+            AdsManager.instance.ShowReward(() =>
             {
                 Ac.PlaySound(Ac.click);
                 AddHole();
@@ -249,7 +249,7 @@ public class PopUpInGame : GameMonobehavior
                 UIManager.Instance.ShowNoInternetPopUp();
                 return;
             }
-            AdManager.instance.ShowReward(() =>
+            AdsManager.instance.ShowReward(() =>
             {
                 Ac.PlaySound(Ac.click);
                 //ResetTimer();
@@ -282,7 +282,7 @@ public class PopUpInGame : GameMonobehavior
                 UIManager.Instance.ShowNoInternetPopUp();
                 return;
             }
-            AdManager.instance.ShowReward(() =>
+            AdsManager.instance.ShowReward(() =>
             {
                 Ac.PlaySound(Ac.click);
                 //ResetTimer();
