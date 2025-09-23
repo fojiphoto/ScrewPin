@@ -2,9 +2,12 @@ apply plugin: 'com.android.application'
 
 dependencies {
     implementation project(':unityLibrary')
+implementation 'com.reyun.solar.engine.oversea:solar-engine-core:1.2.9.1'
+implementation 'com.reyun.solar.engine.oversea:solar-remote-config:1.2.9.1'
     }
 
 android {
+    namespace "**NAMESPACE**"
     ndkPath "**NDKPATH**"
 
     compileSdkVersion **APIVERSION**
