@@ -45,6 +45,6 @@ public class SabloGDPRSmart : MonoBehaviour
     
     public void OpenPrivacyLink()
     {
-        Application.OpenURL("https://rebbel-strike-privacy-policy.blogspot.com/2025/09/privacy-policy.html");
+        Application.OpenURL("https://betazin-games-privacy-policy.blogspot.com/2025/09/privacy-policy-effective-date-may-13.html");
     }
 }
