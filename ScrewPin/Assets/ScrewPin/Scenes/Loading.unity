@@ -1362,7 +1362,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.77900004}
   m_AnchorMax: {x: 0.5, y: 0.77900004}
   m_AnchoredPosition: {x: 0, y: -214.37256}
-  m_SizeDelta: {x: 636.099, y: 912.2549}
+  m_SizeDelta: {x: 969, y: 663}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &940501082
 MonoBehaviour:
@@ -2832,11 +2832,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 963c238440881a347b971e9a6a5b5b6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InterstitialAdUnitIdGeneric: 4a39ddac990c78d7
-  RewardedAdUnitIdGeneric: 0d11af9621a74f5b
-  BannerAdUnitId: d2355fb128da44b6
+  InterstitialAdUnitIdGeneric: 9d5b8afdc75942da
+  RewardedAdUnitIdGeneric: 6efd8ca487b20ea3
+  BannerAdUnitId: d122e0da348a8dc9
   AppOpenAdUnitId: 
-  RecID: 500550438f65d873
+  RecID: de1461194c05ffd1
   isBannerShowing: 0
   _isAdLoaded: 0
   rVShownTime: 0

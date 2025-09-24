@@ -12,8 +12,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: VertexGames
-  productName: Pin Sort Challenge
+  companyName: TopGamerStudio
+  productName: Gear Sort World
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -161,7 +161,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.vgs.pinsort.challenge
+    Android: com.tgs.gearsort.world
   buildNumber:
     Standalone: 0
     VisionOS: 0
@@ -263,8 +263,8 @@ PlayerSettings:
   AndroidTargetDevices: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: D:/Keystores/VertexGames[123456789].keystore
-  AndroidKeyaliasName: vertexgames
+  AndroidKeystoreName: D:/Keystores/TopGamerStudio.keystore
+  AndroidKeyaliasName: topgamerstudio
   AndroidEnableArmv9SecurityFeatures: 0
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 0
@@ -287,7 +287,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 71a716c60b2d9434d9c571dfe01d3a1c, type: 3}
+      m_Icon: {fileID: 2800000, guid: c28318b8a93f1f946ab5f1fa9bc604ad, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0

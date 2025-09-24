@@ -45,6 +45,6 @@ public class SabloGDPRSmart : MonoBehaviour
     
     public void OpenPrivacyLink()
     {
-        Application.OpenURL("https://vertexgames-privacy-policy.blogspot.com/2025/09/privacy-policy.html");
+        Application.OpenURL("https://topgamerstudio-privacy-policy.blogspot.com/2025/09/privacy-policy.html");
     }
 }
