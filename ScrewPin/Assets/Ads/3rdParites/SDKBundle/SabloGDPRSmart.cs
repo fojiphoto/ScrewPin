@@ -45,6 +45,6 @@ public class SabloGDPRSmart : MonoBehaviour
     
     public void OpenPrivacyLink()
     {
-        Application.OpenURL("https://levelup-hub-privacy-policy.blogspot.com/2025/09/privacy-policy-effective-date-july-11.html");
+        Application.OpenURL("https://gamehive-studio.blogspot.com/2025/09/GameHive-Studio-Privacy-Policy.html");
     }
 }
