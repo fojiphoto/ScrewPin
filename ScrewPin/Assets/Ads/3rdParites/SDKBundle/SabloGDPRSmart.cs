@@ -45,6 +45,6 @@ public class SabloGDPRSmart : MonoBehaviour
     
     public void OpenPrivacyLink()
     {
-        Application.OpenURL("https://gamehive-studio.blogspot.com/2025/09/GameHive-Studio-Privacy-Policy.html");
+        Application.OpenURL("https://taparena-privacy-policy.blogspot.com/2025/09/taparena-privacy-policy.html");
     }
 }

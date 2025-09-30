@@ -25,7 +25,7 @@ public class SE_Init : MonoBehaviour
         SolarEngine.Analytics.getDistinctId();
         Debug.Log("[unity] init click");
 
-        String AppKey = "ab41b4d01feac068";
+        String AppKey = "216cb11e375e02ab";
         Debug.LogError("SolarEngine 1");
         //SolarEngine.Analytics.preInitSeSdk("Developer's applied appkey");
         SolarEngine.Analytics.preInitSeSdk(AppKey);
